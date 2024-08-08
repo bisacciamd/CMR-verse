@@ -17,13 +17,10 @@ journals_all <- read_xlsx("data/scopus.xlsx")
 #source("R/pubmed-data-fetch.R")
 #papers <- readRDS("data/pubmed-export_2024-08-08.RDS")
 
-papers_doublecheck <- readRDS(rownames(file.info(list.files("data/pubmed-export", pattern = "\\.RDS$", full.names = TRUE))) %>% 
-  .[which.max(file.info(.)$mtime)])
-
 papers_n <- papers$Articles
 
-results <- biblioAnalysis(papers)
-#saveRDS(results, paste0("data/pubmed-results_", Sys.Date(),".RDS"))
+#results <- biblioAnalysis(papers)
+saveRDS(results, paste0("data/pubmed-results_", Sys.Date(),".RDS"))
 
 results <- readRDS("data/pubmed-results_2024-08-08.RDS")
 # get insights about these data:
