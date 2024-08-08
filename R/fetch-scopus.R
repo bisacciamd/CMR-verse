@@ -1,8 +1,13 @@
 #install.packages("rscopus")
 library(rscopus)
-set_api_key("88fa9a2e059c1d529bb90cc0d4719bed")
+set_api_key(readLines("data/scopus_api_key.secret"))
 token <- readLines("data/scopus_token.secret")
 
-# token is from Scopus dev
+# retrieve my publications
 hdr <- inst_token_header(token)
-res <- author_df(last_name = "Bisaccia", first_name = "Giandomenico", verbose = FALSE, general = FALSE, headers = hdr)
+res <- author_df(last_name = "Bisaccia", first_name = "Giandomenico", verbose = FALSE, headers = hdr)
+
+# retrieve an affiliation
+x <- affiliation_retrieval("60006183", identifier = "affiliation_id", headers = hdr,
+   verbose = T)
+
