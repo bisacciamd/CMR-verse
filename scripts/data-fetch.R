@@ -15,10 +15,10 @@ journals_all <- read_xlsx("data/scopus.xlsx")
 
 # load papers from pubmed
 #source("R/pubmed-data-fetch.R")
-papers <- readRDS("data/pubmed-export_2024-08-08.RDS")
+#papers <- readRDS("data/pubmed-export_2024-08-08.RDS")
 
-#papers <- readRDS(list.files("data/pubmed-export", pattern = "\\.RDS$", full.names = TRUE) %>% 
-#  file.info() %>% {rownames(.)[which.max(.$mtime)]})
+papers_doublecheck <- readRDS(rownames(file.info(list.files("data/pubmed-export", pattern = "\\.RDS$", full.names = TRUE))) %>% 
+  .[which.max(file.info(.)$mtime)])
 
 papers_n <- papers$Articles
 
