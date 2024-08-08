@@ -13,7 +13,7 @@ papers <- readRDS("data/pubmed-export_2024-08-08.RDS")
 papers_n <- papers$Articles
 
 #results <- biblioAnalysis(papers)
-saveRDS(results, paste0("data/pubmed-results_", Sys.Date(),".RDS"))
+#saveRDS(results, paste0("data/pubmed-results_", Sys.Date(),".RDS"))
 
 results <- readRDS("data/pubmed-results_2024-08-08.RDS")
 # get insights about these data:

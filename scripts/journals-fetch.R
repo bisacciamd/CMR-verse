@@ -3,6 +3,8 @@ source("R/fetch-journal-abbrv.R")
 # select only card and rad journals
 journals_all$Category <- sapply(strsplit(journals_all$`Highest percentile`, split = "\n"), `[`, 3)
 journals_all <- journals_all |> filter(Category== "Radiology, Nuclear Medicine and Imaging" | Category == "Cardiology and Cardiovascular Medicine")
+journals_card <- journals_all |> filter(Category == "Cardiology and Cardiovascular Medicine")
+journals_rad <- journals_all |> filter(Category == "Radiology, Nuclear Medicine and Imaging")
 
 # fetch abbreviated titles from Endnote list
 journal_abbrv$`Source title` <- journal_abbrv$V1
