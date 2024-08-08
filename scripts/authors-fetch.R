@@ -10,7 +10,10 @@ first_authors_cmr_list <- fetch_first_authors_list(papers = papers_cmr)
 first_authors_cmr_unique <- unique(first_authors_cmr_list)
 
 # determine last authors
-last_authors_cmr_list <- sapply(papers_cmr$AUTHOR, function(x) x[length(x)])
+last_authors_cmr_list <- as.character(sapply(papers_cmr$AU, function(x) {
+  authors <- strsplit(x, split = ";")[[1]]
+  authors[length(authors)]
+}))
 last_authors_cmr_unique <- unique(last_authors_cmr_list)
 
 # join first and last authors lists
