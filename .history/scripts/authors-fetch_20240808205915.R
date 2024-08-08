@@ -45,4 +45,4 @@ writexl::write_xlsx(as.data.frame(last_authors_cmr_list), path = paste0("data/la
 # Save list of authors as text file
 last_authors_cmr$firstname <- NULL
 last_authors_cmr$lastname <- NULL
-write.csv(unique(last_authors_cmr), paste0("data/last-authors-list_", Sys.Date(), ".csv"), quote = F, row.names = FALSE)
+write.csv(last_authors_cmr, paste0("data/last-authors-list_", Sys.Date(), ".csv"), quote = F, row.names = FALSE)

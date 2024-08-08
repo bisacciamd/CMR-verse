@@ -33,16 +33,12 @@ prolific_cmr_authors <- all_cmr_authors_list[all_cmr_authors_list %in% prolific_
 # Make data.frame of last authors
 last_authors_cmr <- as.data.frame(last_authors_cmr_list)
 
-last_authors_cmr$lastname <- sapply(last_authors_cmr$last_authors_cmr_list, get_author_last_name)
-last_authors_cmr$firstname <- sapply(last_authors_cmr$last_authors_cmr_list, get_author_first_name)
-last_authors_cmr$last_authors_cmr_list <- NULL
 
-last_authors_cmr$fullname <- paste(last_authors_cmr$firstname, last_authors_cmr$lastname)
+last_authors_cmr$lastname <- sapply(last_authors_cmr$last_authors_cmr_list, get_author_last_name)
+
 
 # Save this data.frame
 writexl::write_xlsx(as.data.frame(last_authors_cmr_list), path = paste0("data/last-authors-list_", Sys.Date(), ".xlsx"))
 
-# Save list of authors as text file
-last_authors_cmr$firstname <- NULL
-last_authors_cmr$lastname <- NULL
-write.csv(unique(last_authors_cmr), paste0("data/last-authors-list_", Sys.Date(), ".csv"), quote = F, row.names = FALSE)
+
+writeLines(as.character(last_authors_cmr_list), paste0("data/last-authors-list_", Sys.Date(), ".csv"))
