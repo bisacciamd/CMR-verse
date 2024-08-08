@@ -10,4 +10,4 @@ journals_all <- merge(journals_all, journal_abbrv, by = "Source title", all.x = 
 
 # select only Q1 journals with publications relevant to CMR as captured on pubmed
 # NB as of now, this removes non-english journals because shortened names excluded "Engl ed."
-journals_all_CMR <- journals_all |> filter(toupper(V3.x) %in% unique(papers$JI))
+journals_all_CMR <- journals_all |> filter(toupper(`Source title`) %in% unique(papers$SO))
