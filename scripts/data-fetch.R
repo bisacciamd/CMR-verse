@@ -21,5 +21,3 @@ results <- readRDS("data/pubmed-results_2024-08-08.RDS")
 
 # fetch journals with abbreviations
 source("scripts/journals-fetch.R")
-
-str(papers)
