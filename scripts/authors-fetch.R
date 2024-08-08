@@ -3,7 +3,7 @@ source("R/fetch_first_authors_list.R")
 source("R/fetch-journal-abbrv.R")
 
 # filter papers to only include Q1, CMR relevant journals
-papers_cmr <- papers |> filter(JI %in% toupper(journals_all$V3.x))
+papers_cmr <- papers |> filter(SO %in% toupper(journals_all$`Source title`))
 
 # determine first authors
 first_authors_cmr_list <- fetch_first_authors_list(papers = papers_cmr)
