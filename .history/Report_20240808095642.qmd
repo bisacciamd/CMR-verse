@@ -15,7 +15,7 @@ execute:
   freeze: false
 width: 100%
 ---
-```{r fetch-data}
+```{r}
 source("scripts/data-fetch.R")
 source("scripts/authors-fetch.R")
 ```
@@ -29,7 +29,7 @@ source("scripts/authors-fetch.R")
 - A total of `r length(journals_card$Sourceid)` journals in the *Cardiology and Cardiovascular Medicine* category, and `r length(journals_rad$Sourceid)` journals in the *Radiology, Nuclear Medicine and Imaging* category were identified. 
 - `r nrow(journals_all_CMR)` journals had articles related to CMR.
 
-```{r view-journals}
+```{r}
 library(DT)
 datatable(journals_all_CMR[,])
 ```
@@ -38,6 +38,6 @@ datatable(journals_all_CMR[,])
 - Between 2019 and 2024, a total of `r papers_n` CMR-related papers were published. Of these, `r nrow(papers_cmr)` (`r round(nrow(papers_cmr) / papers_n * 100, digits = 1)`%) were published in top 10% journals by a total of `r length(first_authors_cmr_unique)` unique first authors and `r length(last_authors_cmr_unique)` unique last authors.
 
 # Authors
-```{r view-paeprs}
+```{r}
 datatable(as.data.frame(table(prolific_cmr_authors)))
 ```
