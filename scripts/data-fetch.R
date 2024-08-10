@@ -2,6 +2,7 @@ library(readxl)
 library(dplyr)
 library(bib2df)
 library(bibliometrix)
+library(rscopus)
 
 # top 10% journals derived from scopus
 journals_all <- read_xlsx("data/scopus.xlsx")

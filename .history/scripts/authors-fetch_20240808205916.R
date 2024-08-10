@@ -39,13 +39,10 @@ last_authors_cmr$last_authors_cmr_list <- NULL
 
 last_authors_cmr$fullname <- paste(last_authors_cmr$firstname, last_authors_cmr$lastname)
 
-#source("data/fetch-last-author-affiliation-scopus.R")
-
 # Save this data.frame
 writexl::write_xlsx(as.data.frame(last_authors_cmr_list), path = paste0("data/last-authors-list_", Sys.Date(), ".xlsx"))
 
 # Save list of authors as text file
-last_authors_cmr_csv <- last_authors_cmr
-last_authors_cmr_csv$firstname <- NULL
-last_authors_cmr_csv$lastname <- NULL
-write.csv(unique(last_authors_cmr_csv), paste0("data/last-authors-list_", Sys.Date(), ".csv"), quote = F, row.names = FALSE)
+last_authors_cmr$firstname <- NULL
+last_authors_cmr$lastname <- NULL
+write.csv(last_authors_cmr, paste0("data/last-authors-list_", Sys.Date(), ".csv"), quote = F, row.names = FALSE)

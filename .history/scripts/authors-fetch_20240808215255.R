@@ -39,8 +39,6 @@ last_authors_cmr$last_authors_cmr_list <- NULL
 
 last_authors_cmr$fullname <- paste(last_authors_cmr$firstname, last_authors_cmr$lastname)
 
-#source("data/fetch-last-author-affiliation-scopus.R")
-
 # Save this data.frame
 writexl::write_xlsx(as.data.frame(last_authors_cmr_list), path = paste0("data/last-authors-list_", Sys.Date(), ".xlsx"))
 
