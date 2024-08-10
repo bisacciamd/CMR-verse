@@ -12,7 +12,7 @@ ui <- fluidPage(
                 accept = c("text/csv", "text/comma-separated-values,text/plain", ".csv", ".xlsx")),
       downloadButton("downloadExcel", "Download Excel"),
       hr(),
-      helpText("Upload a CSV or Excel file with columns for author names and affil_city.")
+      helpText("Upload a CSV or Excel file with a single column of author names.")
     ),
     
     mainPanel(
@@ -49,20 +49,13 @@ server <- function(input, output) {
     df <- authors()
     if (is.null(df) || nrow(df) == 0) return(NULL)
     
-    # Check if both author names and affil_city columns exist
-    if (!all(c("author", "affil_city") %in% colnames(df))) {
-      stop("The uploaded file must contain columns named 'author' and 'affil_city'.")
-    }
+    author_names <- df[[1]]
     
-    author_names <- df[["author"]]
-    affil_cities <- df[["affil_city"]]
-    
-    # Create Google search links including author name and affil_city
-    df$Search_Link <- mapply(function(name, city) {
-      search_query <- paste(name, city, "magnetic resonance cv")
-      google_search_url <- paste0("https://www.google.com/search?q=", URLencode(search_query))
+    # Create Google search links
+    df$Search_Link <- sapply(author_names, function(name) {
+      google_search_url <- paste0("https://www.google.com/search?q=", URLencode(paste(name, "magnetic resonance cv")))
       paste0('<a href="', google_search_url, '" target="_blank">Search CV</a>')
-    }, name = author_names, city = affil_cities)
+    })
     
     # Render the data table with HTML links
     datatable(df, escape = FALSE, options = list(pageLength = 5, autoWidth = TRUE))
