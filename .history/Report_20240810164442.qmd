@@ -1,0 +1,45 @@
+---
+title: CMR publications 2019 to 2024
+subtitle: A quantitative appraisal
+description: This document reports on a systematic search conducted on 5th August 2024 which explored the landscape of cardiac magnetic resonance (CMR)-related publications in the last 5 years (2019-2024).
+format: 
+  dashboard:
+    page-layout: full
+    toc: true
+    toc-location: left
+execute:
+  echo: false
+  output: true
+  error: false
+  warning: false
+  freeze: false
+width: 100%
+---
+```{r fetch-data}
+source("scripts/data-fetch.R")
+source("scripts/authors-fetch.R")
+```
+
+# Journals
+- Journal search on Scopus was restricted to the top 10% journals in cardiology and radiology on the [Scopus database](https://www.scopus.com/)
+
+# Authors
+- Author search on Scopus was limited to first and last authors with > 1 CMR-related publications.
+
+# Journals
+- A total of `r nrow(journals_card)` journals in the *Cardiology and Cardiovascular Medicine* category, and `r nrow(journals_rad)` journals in the *Radiology, Nuclear Medicine and Imaging* category were identified as the top 10% journals in their respective category (n = `r nrow(journals_all)` total journals).
+  - of these, `r nrow(journals_all_CMR)` journals had articles related to CMR.
+
+```{r view-journals}
+library(DT)
+datatable(journals_all_CMR[,])
+```
+
+# Papers
+- A systematic search was conducted for all CMR-related studies indexed on [PubMed](https://pubmed.ncbi.nlm.nih.gov) as of `r Sys.Date()` with a date of publication between 2017 to 2024.
+- Between 2019 and 2024, a total of `r results$Articles` CMR-related papers were published. Of these, `r nrow(papers_cmr)` (`r round(nrow(papers_cmr) / papers_n * 100, digits = 1)`%) were published in top 10% journals by a total of `r length(first_authors_cmr_unique)` unique first authors and `r length(last_authors_cmr_unique)` unique last authors.
+
+# Authors
+```{r view-papers}
+datatable(as.data.frame(table(prolific_cmr_authors)))
+```

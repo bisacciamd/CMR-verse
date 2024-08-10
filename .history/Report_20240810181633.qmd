@@ -1,9 +1,9 @@
 ---
 title: The CMR-verse
 subtitle: A quantitative appraisal of CMR publications
-description: This document reports on a systematic search which explores the landscape of cardiac magnetic resonance (CMR)-related publications in the last years (2017-2024).
+description: This document reports on a systematic search which explores the landscape of cardiac magnetic resonance (CMR)-related publications in the last 5 years (2019-2024).
 format: 
-  html:
+  dashboard:
     page-layout: full
     toc: true
     toc-location: left
@@ -53,25 +53,6 @@ last_author_cmr_location <- read_xlsx("data/table-last-authors-location.xlsx")
 - Cardiology as the main specialty was inferred if the author's CV or relevant online statements (e.g. LinkedIn) referred to a clinical fellowship or professorship in cardiology; if any statements were retrieved that the author is an expert in clinical electrophysiology, interventional cardiology, and/or heart failure; if the author's ResearchGate profile listed clinical cardiology among the author's interests.
 - Radiology as the main specialty was inferred if the author's CV or relevant online statements (e.g. LinkedIn) referred to a fellowship or professorship in radiology; if the author was affiliated to a department of radiology and published on imaging subjects different than cardiovascular imaging; if the author's ResearchGate profile listed radiology as the author's interest.
 
-```{r}
-last_authors_cmr <- last_authors_cmr |> 
-  mutate(primary_specialty_assigned = case_when(
-    primary_specialty_assigned != "Radiology" & primary_specialty_assigned != "Cardiology" ~ "Unassigned",
-    primary_specialty_assigned == "Radiology"  ~ "Radiology", 
-    primary_specialty_assigned == "Cardiology"  ~ "Cardiology"
-  ))
-
-library(ggplot2)
-ggplot(last_authors_cmr, aes(x=as.factor(primary_specialty_assigned))) +
-  geom_bar(color="black", fill=rgb(0.1,0.4,0.5,0.7) )+ylab("Count")+xlab("Assigned specialty")
-
-cards <- sum(last_authors_cmr$primary_specialty_assigned=="Cardiology", na.rm = T)
-rads <- sum(last_authors_cmr$primary_specialty_assigned=="Radiology", na.rm = T)
-others <- sum(last_authors_cmr$primary_specialty_assigned=="Unassigned", na.rm = T)
-```
-
-- a total of `r cards` authors specializing in Cardiology and `r rads` authors specializing in Radiology were identified worldwide.
-- Specialty was not assigned to `r others` due to paucity of data.
 
 ## Author map
 

@@ -18,3 +18,4 @@ journals_all_CMR$V1 <- NULL
 journals_all_CMR$V2 <- NULL
 journals_all_CMR$V3 <- NULL
 journals_all_CMR$V4 <- NULL
+journals_all_CMR$ <- NULL
