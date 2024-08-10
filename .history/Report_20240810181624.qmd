@@ -1,7 +1,7 @@
 ---
 title: The CMR-verse
 subtitle: A quantitative appraisal of CMR publications
-description: This document reports on a systematic search which explores the landscape of cardiac magnetic resonance (CMR)-related publications in the last 5 years (2019-2024).
+description: This document reports on a systematic search conducted on 5th August 2024 which explored the landscape of cardiac magnetic resonance (CMR)-related publications in the last 5 years (2019-2024).
 format: 
   dashboard:
     page-layout: full
