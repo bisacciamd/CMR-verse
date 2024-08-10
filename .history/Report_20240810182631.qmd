@@ -54,12 +54,6 @@ last_author_cmr_location <- read_xlsx("data/table-last-authors-location.xlsx")
 - Radiology as the main specialty was inferred if the author's CV or relevant online statements (e.g. LinkedIn) referred to a fellowship or professorship in radiology; if the author was affiliated to a department of radiology and published on imaging subjects different than cardiovascular imaging; if the author's ResearchGate profile listed radiology as the author's interest.
 
 ```{r}
-last_authors_cmr <- last_authors_cmr |> 
-  mutate(primary_specialty_assigned = case_when(
-    primary_specialty_assigned != "Radiology" & primary_specialty_assigned != "Cardiology" ~ "Unassigned",
-    primary_specialty_assigned == "Radiology"  ~ "Radiology", 
-    primary_specialty_assigned == "Cardiology"  ~ "Cardiology"
-  ))
 
 library(ggplot2)
 ggplot(last_authors_cmr, aes(x=as.factor(primary_specialty_assigned))) +
@@ -67,7 +61,7 @@ ggplot(last_authors_cmr, aes(x=as.factor(primary_specialty_assigned))) +
 
 cards <- sum(last_authors_cmr$primary_specialty_assigned=="Cardiology", na.rm = T)
 rads <- sum(last_authors_cmr$primary_specialty_assigned=="Radiology", na.rm = T)
-others <- sum(last_authors_cmr$primary_specialty_assigned=="Unassigned", na.rm = T)
+others <- length(first_authors_cmr_unique)-cards-rads
 ```
 
 - a total of `r cards` authors specializing in Cardiology and `r rads` authors specializing in Radiology were identified worldwide.
