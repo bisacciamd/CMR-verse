@@ -44,7 +44,7 @@ datatable(last_authors_cmr)
 
 ## Last authors by affiliation
 
-```{r authors-affil}
+```{r}
 last_author_cmr_location <- read_xlsx("data/table-last-authors-location.xlsx")
 ```
 
@@ -53,10 +53,13 @@ last_author_cmr_location <- read_xlsx("data/table-last-authors-location.xlsx")
 - Cardiology as the main specialty was inferred if the author's CV or relevant online statements (e.g. LinkedIn) referred to a clinical fellowship or professorship in cardiology; if any statements were retrieved that the author is an expert in clinical electrophysiology, interventional cardiology, and/or heart failure; if the author's ResearchGate profile listed clinical cardiology among the author's interests.
 - Radiology as the main specialty was inferred if the author's CV or relevant online statements (e.g. LinkedIn) referred to a fellowship or professorship in radiology; if the author was affiliated to a department of radiology and published on imaging subjects different than cardiovascular imaging; if the author's ResearchGate profile listed radiology as the author's interest.
 
+```{r}
+
+```
 
 ## Author map
 
-```{r author-map}
+```{r}
 source("R/map-authors.R")
 p
 ```
