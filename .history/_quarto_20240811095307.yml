@@ -12,7 +12,7 @@ website:
         href: https://github.com/bisacciamd/CMR-verse/
       - href: index.qmd
         text: Home
-      - href: dashboard.qmd
+      - href: index.qmd
         text: The CMR-verse
       - href: methods.qmd
         text: Methods

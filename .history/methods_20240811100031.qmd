@@ -1,0 +1,38 @@
+---
+title: The CMR-verse
+subtitle: A quantitative appraisal of CMR publications
+---
+
+```{mermaid}
+graph TD
+pubmed[<b>PubMed searched</b> for\n CMR-related publications] -->
+bib[<b>Bibliometric analysis</b>\nAuthors extracted] --> 
+scopus[<b>Scopus searched</b>\nfor last author profile\n e.g. affiliation] --> 
+google[<b>Google searched</b>\nfor author's primary specialty\n e.g. cardiology or radiology]
+```
+
+```{r}
+```
+
+# Papers
+- A systematic search is conducted for all CMR-related publications indexed on [PubMed](https://pubmed.ncbi.nlm.nih.gov) as of `r Sys.Date()` with a publication date between 2017 and 2024.
+
+# Journals
+- Search for journals is conducted on the [Scopus database](https://www.scopus.com/). The search is restricted to the top 10% journals in the *Cardiology and Cardiovascular Medicine* and *Radiology, Nuclear Medicine and Imaging* categories. 
+- Journals are further screened for authors if they published [papers](#papers) relating to cardiovascular magnetic resonance (CMR) in the study period (2017-2024).
+
+# Authors
+- Unique author names extracted from the collected papers are collected and first and last authors searched on Scopus
+- Author search on Scopus is limited to last authors with > 1 CMR-related publications.
+- Last authors are classified by specialty and mapped based on their institutional affiliation.
+
+## Assigning a primary specialty
+- A primary clinical specialty of **Cardiology** or **Radiology** is manually assigned based on an automated google search with the following query:
+
+    > {author-name} {author-affiliation-city} cardiac MRI CV
+- Where identified, any of the following is screened: 
+  - ResearchGate and LinkedIn profiles
+  - Curriculum vitae 
+  - Institutional webpage
+
+  Non-clinical authors are assigned a "**Non-MD scientist**" status, while those unidentified remain "**Unassigned**".
