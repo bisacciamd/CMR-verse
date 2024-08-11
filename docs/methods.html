@@ -196,8 +196,8 @@ google[&lt;b&gt;Google searched&lt;/b&gt;\nfor author's primary specialty\n e.g.
 <section id="authors" class="level1">
 <h1>Authors</h1>
 <ul>
-<li>Unique author names from the collected papers are extracted</li>
-<li>Last authors searched on Scopus with the <code>rscopus</code> package
+<li>Unique author names from the collected papers are extracted.</li>
+<li>Last authors searched on Scopus with the <code>rscopus</code> package.
 <ul>
 <li>Author search on Scopus is limited to last authors with &gt; 1 CMR-related publications.</li>
 </ul></li>
@@ -205,18 +205,19 @@ google[&lt;b&gt;Google searched&lt;/b&gt;\nfor author's primary specialty\n e.g.
 <section id="assigning-a-primary-specialty" class="level2">
 <h2 class="anchored" data-anchor-id="assigning-a-primary-specialty">Assigning a primary specialty</h2>
 <ul>
-<li><p>Last authors are classified by specialty and mapped based on their institutional affiliation.</p></li>
-<li><p>A primary clinical specialty of <strong>Cardiology</strong> or <strong>Radiology</strong> is manually assigned based on an automated google search with the following query:</p>
-<blockquote class="blockquote">
-<p><code>{author-name} {author-affiliation-city} cardiac MRI CV</code></p>
-</blockquote></li>
-<li><p>Where identified, any of the following is screened:</p>
+<li>Last authors are classified by specialty and mapped based on their institutional affiliation.</li>
+<li>A primary clinical specialty of <strong>Cardiology</strong> or <strong>Radiology</strong> is manually assigned based on an automated google search.</li>
+</ul>
+<p>Google is searched with the following query structure:</p>
+<pre><code>&gt; `{author-name} {author-affiliation-city} cardiac MRI CV`</code></pre>
 <ul>
-<li>ResearchGate and LinkedIn profiles</li>
+<li>Where identified, any of the following is screened:
+<ul>
+<li>ResearchGate and/or LinkedIn profile</li>
 <li>Curriculum vitae</li>
 <li>Institutional webpage</li>
 </ul>
-<p>Non-clinical authors are assigned a “<strong>Non-MD scientist</strong>” status, while those unidentified remain “<strong>Unassigned</strong>”.</p></li>
+Non-clinical authors are assigned a “<strong>Non-MD scientist</strong>” status, while those unidentified remain “<strong>Unassigned</strong>”.</li>
 </ul>
 
 

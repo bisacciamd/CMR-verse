@@ -11,7 +11,7 @@
     "href": "methods.html#assigning-a-primary-specialty",
     "title": "Methods for the CMR-verse",
     "section": "Assigning a primary specialty",
-    "text": "Assigning a primary specialty\n\nLast authors are classified by specialty and mapped based on their institutional affiliation.\nA primary clinical specialty of Cardiology or Radiology is manually assigned based on an automated google search with the following query:\n\n{author-name} {author-affiliation-city} cardiac MRI CV\n\nWhere identified, any of the following is screened:\n\nResearchGate and LinkedIn profiles\nCurriculum vitae\nInstitutional webpage\n\nNon-clinical authors are assigned a “Non-MD scientist” status, while those unidentified remain “Unassigned”."
+    "text": "Assigning a primary specialty\n\nLast authors are classified by specialty and mapped based on their institutional affiliation.\nA primary clinical specialty of Cardiology or Radiology is manually assigned based on an automated google search.\n\nGoogle is searched with the following query structure:\n&gt; `{author-name} {author-affiliation-city} cardiac MRI CV`\n\nWhere identified, any of the following is screened:\n\nResearchGate and/or LinkedIn profile\nCurriculum vitae\nInstitutional webpage\n\nNon-clinical authors are assigned a “Non-MD scientist” status, while those unidentified remain “Unassigned”."
   },
   {
     "objectID": "index.html",
