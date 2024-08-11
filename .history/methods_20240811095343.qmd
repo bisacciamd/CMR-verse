@@ -1,0 +1,28 @@
+---
+title: The CMR-verse
+subtitle: A quantitative appraisal of CMR publications
+---
+
+```{mermaid}
+graph TD
+pubmed[<b>PubMed searched</b> for\n CMR-related publications] -->
+bib[<b>Bibliometric analysis</b>\nAuthors extracted] --> 
+scopus[<b>Scopus searched</b>\nfor last author profile\n e.g. affiliation] --> 
+google[<b>Google searched</b>] --> specialty(last author primary specialty)
+```
+
+# Papers
+- A systematic search is conducted for all CMR-related publications indexed on [PubMed](https://pubmed.ncbi.nlm.nih.gov) as of `r Sys.Date()` with a publication date between 2017 and 2024 (*study period*).
+
+# Journals
+- Search for journals is conducted on the [Scopus database](https://www.scopus.com/). The search is restricted to the top 10% journals in the *Cardiology and Cardiovascular Medicine* and *Radiology, Nuclear Medicine and Imaging* categories. 
+- Journals are further screened for authors if they published [papers](#papers) relating to cardiovascular magnetic resonance (CMR) in the study period (2017-2024).
+
+# Authors
+- Unique author names extracted from the collected papers are collected and first and last authors searched on Scopus
+- Last authors having published > 1 CMR-related publication
+
+- A systematic search was conducted for all CMR-related studies indexed on [PubMed](https://pubmed.ncbi.nlm.nih.gov) as of `r Sys.Date()` with a date of publication between 2017 to 2024.
+
+- Author search on Scopus was limited to last authors with > 1 CMR-related publications.
+- Last authors are classified by specialty and mapped based on their institutional affiliation.

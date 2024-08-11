@@ -1,5 +1,19 @@
 [
   {
+    "objectID": "methods.html",
+    "href": "methods.html",
+    "title": "Methods for the CMR-verse",
+    "section": "",
+    "text": "graph LR\npubmed[&lt;b&gt;PubMed searched&lt;/b&gt; for\\n CMR-related publications] --&gt;\nselect[&lt;b&gt;Top 10% journals selected&lt;/b&gt;\\n in cardiology and radiology] --&gt;\nbib[&lt;b&gt;Bibliometric analysis&lt;/b&gt;\\nAuthors extracted] --&gt; \nscopus[&lt;b&gt;Scopus searched&lt;/b&gt;\\nfor last author profile\\n e.g. affiliation] --&gt; \ngoogle[&lt;b&gt;Google searched&lt;/b&gt;\\nfor author's primary specialty\\n e.g. cardiology or radiology]"
+  },
+  {
+    "objectID": "methods.html#assigning-a-primary-specialty",
+    "href": "methods.html#assigning-a-primary-specialty",
+    "title": "Methods for the CMR-verse",
+    "section": "Assigning a primary specialty",
+    "text": "Assigning a primary specialty\n\nLast authors are classified by specialty and mapped based on their institutional affiliation.\nA primary clinical specialty of Cardiology or Radiology is manually assigned based on an automated google search with the following query:\n\n{author-name} {author-affiliation-city} cardiac MRI CV\n\nWhere identified, any of the following is screened:\n\nResearchGate and LinkedIn profiles\nCurriculum vitae\nInstitutional webpage\n\nNon-clinical authors are assigned a “Non-MD scientist” status, while those unidentified remain “Unassigned”."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "The CMR-verse",
@@ -18,7 +32,7 @@
     "href": "index.html#last-authors-by-specialty",
     "title": "The CMR-verse",
     "section": "Last authors by specialty",
-    "text": "Last authors by specialty\n\nSpecialty was inferred through combination of automated and manual searches based on Google search results.\nCardiology as the main specialty was inferred if the author’s CV or relevant online statements (e.g. LinkedIn) referred to a clinical fellowship or professorship in cardiology; if any statements were retrieved that the author is an expert in clinical electrophysiology, interventional cardiology, and/or heart failure; if the author’s ResearchGate profile listed clinical cardiology among the author’s interests.\nRadiology as the main specialty was inferred if the author’s CV or relevant online statements (e.g. LinkedIn) referred to a fellowship or professorship in radiology; if the author was affiliated to a department of radiology and published on imaging subjects different than cardiovascular imaging; if the author’s ResearchGate profile listed radiology as the author’s interest.\n\n\n\n\n\n\n\n\n\n\n\na total of 146 authors specializing in Cardiology and 67 authors specializing in Radiology were identified worldwide.\nSpecialty was not assigned to 44 due to paucity of data."
+    "text": "Last authors by specialty\n\nSpecialty was inferred through combination of automated and manual searches based on Google search results.\nCardiology as the main specialty was inferred if the author’s CV or relevant online statements (e.g. LinkedIn) referred to a clinical fellowship or professorship in cardiology; if any statements were retrieved that the author is an expert in clinical electrophysiology, interventional cardiology, and/or heart failure; if the author’s ResearchGate profile listed clinical cardiology among the author’s interests.\nRadiology as the main specialty was inferred if the author’s CV or relevant online statements (e.g. LinkedIn) referred to a fellowship or professorship in radiology; if the author was affiliated to a department of radiology and published on imaging subjects different than cardiovascular imaging; if the author’s ResearchGate profile listed radiology as the author’s interest.\n\n\n\n\n\n\n\n\n\n\n\na total of 146 authors specializing in Cardiology and 67 authors specializing in Radiology were identified worldwide.\nSpecialty was not assigned to 0 due to paucity of data."
   },
   {
     "objectID": "index.html#author-map",

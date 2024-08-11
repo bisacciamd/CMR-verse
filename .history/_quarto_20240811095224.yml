@@ -14,7 +14,7 @@ website:
         text: Home
       - href: index.qmd
         text: The CMR-verse
-      - href: methods.qmd
+        - href: methods.qmd
         text: Methods
 
 reader-mode: false
