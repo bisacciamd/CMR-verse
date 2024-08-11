@@ -6,11 +6,11 @@ library(rscopus)
 
 # top 10% journals derived from scopus
 journals_all <- read_xlsx("data/scopus.xlsx")
+source("scripts/journals-fetch.R")
 
 # load papers from pubmed
 #source("R/pubmed-data-fetch.R")
 papers <- readRDS("data/pubmed-export_2024-08-08.RDS")
-source("scripts/journals-fetch.R")
 
 papers_n <- papers$Articles
 papers_ <- papers |> filter(SO %in% toupper(journals_all_CMR$`Source title`))

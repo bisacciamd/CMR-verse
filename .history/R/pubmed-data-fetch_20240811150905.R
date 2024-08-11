@@ -10,7 +10,7 @@ query <- "(Magnetic Resonance Imaging, Cine[Mesh] OR (Magnetic Resonance Angiogr
 
 res <- pmQueryTotalCount(query = query, api_key = api_key)
 
-D <- pmApiRequest(query = query, limit=10000, api_key = api_key)
+D <- pmApiRequest(query = query, limit = res$total_count, api_key = NULL)
 
 papers <- convert2df(D, dbsource = "pubmed", format = "api")
 
