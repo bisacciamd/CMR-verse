@@ -32,65 +32,12 @@ datatable(journals_all_CMR[,])
 # get insights about these data:
 S <- summary(object = results, k = 10, pause = FALSE)
 #plot(x = results, pause = T) # not working
-```
 
-```{r}
 threeFieldsPlot(papers_)
 # fetch journals with abbreviations
-```
-
-## Donut about document types
-```{r donut}
-library(echarts4r)
-library(stringr)
-df <- results$Documents |> as.data.frame()
-
-# Modify the levels of Var1 by searching for substrings
-levels(df$Var1) <- sapply(levels(df$Var1), function(x) {
-  case_when(
-    x == "REVIEW                               " ~ "Review",
-    str_detect(x, "TRIAL") ~ "Clinical trial",
-    str_detect(x, "MULTICENTER") ~ "Multicenter study",
-    str_detect(x, "META-ANALYSIS") ~ "Meta-analysis",
-    str_detect(x, "SYSTEMATIC") ~ "Systematic review",
-    str_detect(x, "STUDY") ~ "Clinical study",
-    str_detect(x, "ABSTRACT") ~ "Abstract",
-    str_detect(x, "JOURNAL ARTICLE") ~ "Journal article (not specified)",
-    str_detect(x, "LETTER|REPORT|EDITORIAL|CONSENSUS|NEWS") ~ "Other",
-    TRUE ~ x  # Keep the level unchanged if it doesn't match any condition
-  )
-})
-
-# Convert back to a factor to ensure it's still a factor
-df$Var1 <- factor(df$Var1)
-
-# Drop any unused levels to remove redundancies
-df$Var1 <- droplevels(df$Var1)
-
-df %>%
-  group_by(Var1) %>%
-  summarize(Freq = sum(Freq)) %>%
-  ungroup() |> 
-  e_charts(Var1) |> 
-  e_pie(Freq, radius = c("50%", "70%")) |> 
-  e_title("Donut chart")
 
 ```
 
-```{r wordcloud}
-terms <- attr(results$ID, "dimnames")[[1]]
-freqs <- as.numeric(results$ID)
-
-df <- data.frame(
-  term = terms,
-  frequency = freqs
-)
-
-df |> 
-  e_color_range(frequency, color) |> 
-  e_charts() |> 
-  e_cloud(term, frequency, color, shape = "circle", sizeRange = c(10, 150)) 
-```
 
 # Authors
 
