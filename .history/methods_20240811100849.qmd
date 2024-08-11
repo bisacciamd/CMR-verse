@@ -33,7 +33,7 @@ google[<b>Google searched</b>\nfor author's primary specialty\n e.g. cardiology 
 - Last authors are classified by specialty and mapped based on their institutional affiliation.
 - A primary clinical specialty of **Cardiology** or **Radiology** is manually assigned based on an automated google search with the following query:
 
-    > `{author-name} {author-affiliation-city} cardiac MRI CV`
+    `{author-name} {author-affiliation-city} cardiac MRI CV`
 - Where identified, any of the following is screened: 
   - ResearchGate and LinkedIn profiles
   - Curriculum vitae 
