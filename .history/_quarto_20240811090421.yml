@@ -12,8 +12,6 @@ website:
         href: https://github.com/bisacciamd/CMR-verse/
       - href: index.qmd
         text: Home
-      - href: index.qmd
-        text: The CMR-verse
 
 reader-mode: false
 format:
