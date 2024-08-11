@@ -25,15 +25,13 @@ google[<b>Google searched</b>\nfor author's primary specialty\n e.g. cardiology 
 - Journals are further screened for authors if they published papers relating to cardiovascular magnetic resonance (CMR) in the study period (2017-2024).
 
 # Authors
-- Unique author names from the collected papers are extracted.
-- Last authors searched on Scopus with the `rscopus` package.
+- Unique author names from the collected papers are extracted
+- Last authors searched on Scopus with the `rscopus` package
   - Author search on Scopus is limited to last authors with > 1 CMR-related publications.
 
 ## Assigning a primary specialty
 - Last authors are classified by specialty and mapped based on their institutional affiliation.
-- A primary clinical specialty of **Cardiology** or **Radiology** is manually assigned based on an automated google search.
-
-Google is searched with the following query structure:
+- A primary clinical specialty of **Cardiology** or **Radiology** is manually assigned based on an automated google search with the following query:
 
     > `{author-name} {author-affiliation-city} cardiac MRI CV`
 - Where identified, any of the following is screened: 
